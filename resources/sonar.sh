@@ -33,7 +33,7 @@ SONAR_ARGUMENTS="-Dsonar.web.context=${SONARQUBE_WEB_CONTEXT} \
 
 if [ "$ADOP_LDAP_ENABLED" = true ]
   then
-  SONAR_ARGUMENTS+=" -Dsonar.security.realm=LDAP \
+  SONAR_ARGUMENTS+=" -Dsonar.security.realm=ACTIVE_DIRECTORY \
     -Dsonar.security.savePassword=false \
     -Dldap.url=${LDAP_URL} \
     -Dldap.bindDn=${LDAP_BIND_DN} \
