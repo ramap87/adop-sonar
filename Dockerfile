@@ -12,7 +12,8 @@ ENV SONARQUBE_PLUGINS_DIR=/opt/sonarqube/default/extensions/plugins \
 COPY resources/plugins.txt ${SONARQUBE_PLUGINS_DIR}/
 COPY resources/sonar.sh resources/plugins.sh /usr/local/bin/
 
-RUN chmod +x /usr/local/bin/* 
+RUN chmod +x /usr/local/bin/* && cd $SONARQUBE_HOME/lib/bundled-plugins/ \
+  && curl -sSOL https://sonarsource.bintray.com/Distribution/sonar-ldap-plugin/sonar-ldap-plugin-2.1.0.507.jar 
 RUN /usr/local/bin/plugins.sh ${SONARQUBE_PLUGINS_DIR}/plugins.txt
 
 VOLUME ["/opt/sonarqube/logs/"]
