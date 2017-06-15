@@ -55,4 +55,4 @@ if [ ! -e "/opt/sonarqube/logs/access.log" ]
   ln -s /dev/stdout /opt/sonarqube/logs/access.log
 fi
 # Start SonarQube
-./bin/run.sh ${SONAR_ARGUMENTS} ${SONAR_ARGUMENTS}
+./bin/run.sh ${SONAR_ARGUMENTS}
